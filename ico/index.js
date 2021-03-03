@@ -10,7 +10,9 @@ const HTTP_PORT = 3000;
 
 const app = express();
 
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(bodyParser.raw());
 
 const blockchain = new Blockchain();
 const wallet = new Wallet("i am the first leader");
